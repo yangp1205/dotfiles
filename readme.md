@@ -1,11 +1,13 @@
 # 这是一个保存个人配置文件的仓库
 
+![Ubunut_Gnome](./pictures/ubuntu_gonme.png)
+
 ## vim
 1. 安装插件管理工具vim-plug
 2. 将vimrc文件替换
 3. 安装插件
-3. 安装cmake、python3.x-dev等工具
-4. 进入目录安装YouCompleteMe
+4. 安装cmake、python3.x-dev等工具
+5. 进入目录安装YouCompleteMe
 
 ## zsh
 1. 安装插件管理工具zplug
@@ -16,7 +18,7 @@
 6. source .zshrc或者重启终端
 
 ## conky
-* 使用wiki上的配置，修改为全透明和和位置
+* 使用wiki上的配置，修改为全透明背景以及显示位置
 
 ## ibus-rime
 1. 使用明月简体拼音输入
