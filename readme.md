@@ -1,6 +1,6 @@
 # 这是一个保存个人配置文件的仓库
 
-![Ubunut_Gnome](./pictures/ubuntu_gonme.png)
+![Ubuntu_Gnome](./pictures/ubuntu_gnome.png)
 
 ## vim
 1. 安装插件管理工具vim-plug
