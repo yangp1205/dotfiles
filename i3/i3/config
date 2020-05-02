@@ -46,6 +46,7 @@ set $right h
 floating_modifier Mod1
 
 # start a terminal
+#bindsym Mod4+Return exec --no-startup-id gnome-terminal 
 bindsym Mod4+Return exec --no-startup-id alacritty 
 
 # kill focused window
@@ -55,7 +56,7 @@ bindsym Mod1+w kill
 #bindsym Mod1+d exec dmenu_run
 bindsym Mod4+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-12' -p 'dmenu%'"
 
-bindsym Mod1+d exec "rofi -show run"
+bindsym Mod1+Return exec "rofi -show run"
 
 bindsym Mod4+l exec "i3lock-fancy"
 
@@ -121,17 +122,6 @@ bindsym Mod1+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod1+minus scratchpad show
 
-set $WS1  1:  
-set $WS2  2:  
-set $WS3  3:  
-set $WS4  4:  
-set $WS5  5:  
-set $WS6  6:  
-set $WS8  8:  
-set $WS9  9:  
-set $WS0 10:  
-
-
 # switch to workspace
 bindsym Mod1+1 workspace $WS1
 bindsym Mod1+2 workspace $WS2
@@ -164,6 +154,8 @@ assign [class="Gnome-terminal"] $WS1
 assign [class="Chromium-browser"] $WS2
 assign [class="Thunar"] $WS4
 assign [class="Nautilus"] $WS4
+assign [class="netease-cloud-music"] $WS5
+
 
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
@@ -227,33 +219,33 @@ bar {
 #    strip_workspace_numbers yes
 #    status_command i3status
     separator_symbol "    "
-#colors {
-#      background #282A36
-#      statusline #F8F8F2
-#separator  #44475A
-
-#      focused_workspace  #44475A #44475A #F8F8F2
-#      active_workspace   #282A36 #44475A #F8F8F2
-#     inactive_workspace #282A36 #282A36 #BFBFBF
-#      urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#      binding_mode       #FF5555 #FF5555 #F8F8F2
-#}
 colors {
-        background #10101000
-        statusline #FFFFFF
-        separator  #3399FF
-        # 工作区颜色         边框    背景    文字
-        focused_workspace  #3297FD #11111100 #FFFFFF
-        active_workspace   #FFFFFF #FFFFFF00 #FFFFFF
-        inactive_workspace #111111 #11111100 #FFFFFF
-        urgent_workspace   #990000 #11111100 #FFFFFF
-        binding_mode       #990000 #99000000 #FFFFFF
-    }
+      background #282A36
+      statusline #F8F8F2
+separator  #44475A
+
+      focused_workspace  #44475A #44475A #F8F8F2
+      active_workspace   #282A36 #44475A #F8F8F2
+     inactive_workspace #282A36 #282A36 #BFBFBF
+      urgent_workspace   #FF5555 #FF5555 #F8F8F2
+      binding_mode       #FF5555 #FF5555 #F8F8F2
+}
+#colors {
+#        background #10101000
+#        statusline #FFFFFF
+#        separator  #3399FF
+#        # 工作区颜色         边框    背景    文字
+#        focused_workspace  #3297FD #11111100 #FFFFFF
+#        active_workspace   #FFFFFF #FFFFFF00 #FFFFFF
+#        inactive_workspace #111111 #11111100 #FFFFFF
+#        urgent_workspace   #990000 #11111100 #FFFFFF
+#        binding_mode       #990000 #99000000 #FFFFFF
+#    }
 }
 hide_edge_borders smart_no_gaps
-#new_window none
+new_window none
 for_window [class="^.*"] border pixel 0
-smart_gaps on
+#smart_gaps on
 smart_borders on
 gaps inner 6
 gaps outer 5
@@ -276,10 +268,10 @@ exec --no-startup-id i3-config-wizard
 exec --no-startup-id feh --bg-fill ~/Pictures/60df03194fbcc55e1f9311eae66fc9c2.jpg
 
 exec --no-startup-id conky -d
-exec --no-startup-id conky -d -c ~/.config/conky/themes/sidekick/sidekick.conkyrc
-
+#exec --no-startup-id conky -d -c ~/.config/conky/themes/sidekick/sidekick.conkyrc
+exec --no-startup-id conky -d -c ~/.config/conky/themes/syclo/syclo-blue-topleft.conkyrc
 exec --no-startup-id pnmixer
 
 exec --no-startup-id vmware-user
 
-exec_always --no-startup-id  compton -bf
+exec --no-startup-id  compton -b
