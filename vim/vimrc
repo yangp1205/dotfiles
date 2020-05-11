@@ -6,7 +6,8 @@ set ruler
 set backspace=2
 set nocompatible
 set confirm
-autocmd InsertEnter * se cul
+autocmd InsertEnter * se cuc
+set cul
 
 " 自动缩进和Tabs设置
 set tabstop=4
@@ -111,11 +112,11 @@ endfunc
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe'
-let g:ycm_min_num_of_chars_for_completion = 2  "开始补全的字符数"
-let g:ycm_python_binary_path = '/usr/local/bin/python3' "jedi模块所在python解释器路径"
-let g:ycm_seed_identifiers_with_syntax = 1  "开启使用语言的一些关键字查询"
-let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口"
+"Plug 'Valloric/YouCompleteMe'
+"let g:ycm_min_num_of_chars_for_completion = 2  "开始补全的字符数"
+"let g:ycm_python_binary_path = '/usr/local/bin/python3' "jedi模块所在python解释器路径"
+"let g:ycm_seed_identifiers_with_syntax = 1  "开启使用语言的一些关键字查询"
+"let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口"
 
 Plug 'mhinz/vim-startify'
 
@@ -146,8 +147,8 @@ map <leader>9 :b 9<CR>
 
 Plug 'Raimondi/delimitMate'
 
-"Plug 'maralla/completor.vim'
-"let g:completor_python_binary = '/usr/bin/python3'
+Plug 'maralla/completor.vim'
+let g:completor_python_binary = '/usr/bin/python3'
 
 Plug 'vim-syntastic/syntastic'
 
@@ -160,6 +161,10 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+"let g:mkdp_browser = "/usr/bin/chromium"
+"let g:mkdp_markdown_css=''
 
 Plug 'frazrepo/vim-rainbow'
 au FileType c,cpp,objc,objcpp,py call rainbow#load()

@@ -15,7 +15,7 @@
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 12
+font pango:Monaco 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -47,7 +47,7 @@ floating_modifier Mod1
 
 # start a terminal
 #bindsym Mod4+Return exec --no-startup-id gnome-terminal 
-bindsym Mod4+Return exec --no-startup-id alacritty 
+bindsym Mod4+Return exec --no-startup-id terminator 
 
 # kill focused window
 bindsym Mod1+w kill
@@ -58,7 +58,7 @@ bindsym Mod4+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F
 
 bindsym Mod1+Return exec "rofi -show run"
 
-bindsym Mod4+l exec "i3lock-fancy"
+bindsym Mod4+l exec "i3lock"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -159,6 +159,7 @@ assign [class="netease-cloud-music"] $WS5
 
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
+bindsym Mod1+x [urgent=latest] focus
 
 # reload the configuration file
 bindsym Mod1+Shift+c reload
@@ -210,23 +211,21 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 bar {
-    i3bar_command i3bar -t
+#    i3bar_command i3bar -t
     height 28
 #   禁止systemtray系统托盘
 #   tray_output no
-    status_command ~/.config/i3/jconky
+    status_command  i3status
     position top
 #    strip_workspace_numbers yes
-#    status_command i3status
     separator_symbol "    "
 colors {
       background #282A36
       statusline #F8F8F2
-separator  #44475A
-
+      separator  #44475A
       focused_workspace  #44475A #44475A #F8F8F2
       active_workspace   #282A36 #44475A #F8F8F2
-     inactive_workspace #282A36 #282A36 #BFBFBF
+      inactive_workspace #282A36 #282A36 #BFBFBF
       urgent_workspace   #FF5555 #FF5555 #F8F8F2
       binding_mode       #FF5555 #FF5555 #F8F8F2
 }
@@ -234,11 +233,11 @@ separator  #44475A
 #        background #10101000
 #        statusline #FFFFFF
 #        separator  #3399FF
-#        # 工作区颜色         边框    背景    文字
+        # 工作区颜色         边框    背景    文字
 #        focused_workspace  #3297FD #11111100 #FFFFFF
 #        active_workspace   #FFFFFF #FFFFFF00 #FFFFFF
 #        inactive_workspace #111111 #11111100 #FFFFFF
-#        urgent_workspace   #990000 #11111100 #FFFFFF
+#    urgent_workspace   #990000 #11111100 #FFFFFF
 #        binding_mode       #990000 #99000000 #FFFFFF
 #    }
 }
@@ -261,17 +260,19 @@ gaps outer 5
 #
 # Please remove the following exec line:
 #######################################################################
-exec --no-startup-id i3-config-wizard
+#exec --no-startup-id i3-config-wizard
 
 # exec --no-startup-id xrandr -s 1920x1200
 
-exec --no-startup-id feh --bg-fill ~/Pictures/60df03194fbcc55e1f9311eae66fc9c2.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/icebear.jpg
 
-exec --no-startup-id conky -d
+#exec --no-startup-id conky -d
 #exec --no-startup-id conky -d -c ~/.config/conky/themes/sidekick/sidekick.conkyrc
 exec --no-startup-id conky -d -c ~/.config/conky/themes/syclo/syclo-blue-topleft.conkyrc
-exec --no-startup-id pnmixer
+#exec --no-startup-id pnmixer
 
-exec --no-startup-id vmware-user
+#exec --no-startup-id vmware-user
 
-exec --no-startup-id  compton -b
+exec --no-startup-id  picom -b
+
+exec_always --no-startup-id autotiling
