@@ -3,6 +3,7 @@
 ![Ubuntu_Gnome](./pictures/ubuntu_gnome.png)
 * i3wm
 ![i3wm](./pictures/i3wm.png)
+
 ## vim(nvim)
 1. 安装插件管理工具vim-plug
 2. 将vimrc文件替换
@@ -27,6 +28,8 @@
 1. 使用明月简体拼音输入
 2. 同时使用东风破管理插件（目前只有表情插件，而且还没有生效）
 3. 配置文件地址：.config/ibus/rime/
+4. woc dax
+5. 刚刚就现场翻车啦
 
 ## i3-gaps
 1. 简单的i3配置文件，实现ubuntu+i3wm环境
@@ -42,8 +45,9 @@
 1. 终端配置
 2. 内存使用较高，使用GPU加速
 
-## fcitx-rime
+## fcitx
 1. 在i3wm中使用更好，使用ubuntu的im-config可以自动配置不同的桌面使用不同的输入法
 2. 在ubuntu中apt默认安装的时fcitx4
-3. 可以使用github安装新的皮肤
+3. 可以使用github安装新的皮肤(arch可以直接通过pacman安装)
+4. 在其实用libpinyin也很简单，而且支持联想功能
 
