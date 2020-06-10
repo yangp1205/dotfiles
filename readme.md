@@ -65,3 +65,4 @@
 3. 现在这个虚拟机的配置就很完美了，没有必要去折腾其他的发行版，浪费时间
 4. 可以学习lua语言，配置awesome，可以在另一台虚拟机上实验，，学习一些新的东西
 5. 基本是：arch、gnome、i3wm、awesome、fcitx、picom、alacritty、conky、eg.
+6. dwm也是很好用的，现在只要找一个好用都登录管理器就好了
