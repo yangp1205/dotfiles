@@ -18,7 +18,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "Monaco:size=12" };
-static const char dmenufont[]       = "SourcwCodePro Nerd Font Mono:size=12";
+static const char dmenufont[]       = "SourceCodePro Nerd Font Mono:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browsercmd[]  = { "firefox", NULL };
+static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 
 static const char *upvol[]   = { "/home/john/scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/home/john/scripts/vol-down.sh",  NULL };
@@ -138,7 +138,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_o,                    restoreotherwins, {0}},
 	{ MODKEY|ShiftMask,    XK_Return,               zoom,           {0} },
 	{ MODKEY,              XK_Tab,                  view,           {0} },
-	{ MODKEY|ShiftMask,    XK_c,                    killclient,     {0} },
+	{ MODKEY,              XK_q,                    killclient,     {0} },
 	{ MODKEY,              XK_f,                    setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,              XK_m,                    setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,    XK_f,                    fullscreen,     {0} },

@@ -1,111 +1,92 @@
 {
   "log": {
-    "error": "",
-    "loglevel": "info",
-    "access": ""
-  },
+      "error": "",
+      "loglevel": "info",
+      "access": ""
+    },
   "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "protocol": "socks",
-      "settings": {
-        "ip": "",
-        "userLevel": 0,
-        "udp": true,
-        "auth": "noauth"
-      },
-      "port": "1089"
-    },
-    {
-      "listen": "127.0.0.1",
-      "protocol": "http",
-      "settings": {
-        "timeout": 360
-      },
-      "port": "1087"
-    }
-  ],
+      {
+            "listen": "127.0.0.1",
+            "protocol": "socks",
+            "settings": {
+                    "udp": true,
+                    "auth": "noauth"
+                  },
+            "port": "1080"
+          },
+      {
+            "listen": "127.0.0.1",
+            "protocol": "http",
+            "settings": {
+                    "timeout": 360
+                  },
+            "port": "1087"
+          }
+    ],
   "outbounds": [
-    {
-      "mux": {
-        "enabled": false,
-        "concurrency": 8
-      },
-      "protocol": "vmess",
-      "streamSettings": {
-        "wsSettings": {
-          "path": "",
-          "headers": {
-            "host": "download.windowsupdate.com"
+      {
+            "mux": {
+                    "enabled": false,
+                    "concurrency": 8
+                  },
+            "protocol": "vmess",
+            "streamSettings": {
+                    "wsSettings": {
+                              "path": "",
+                              "headers": {
+                                          "host": "download.windowsupdate.com"
+                                        }
+                            },
+                    "tlsSettings": {
+                              "serverName": "download.windowsupdate.com",
+                              "allowInsecure": true
+                            },
+                    "security": "none",
+                    "network": "ws"
+                  },
+            "tag": "proxy",
+            "settings": {
+                    "vnext": [
+                              {
+                                          "address": "hndg8uehrwuigryusfcbyazifvwayregwausybvyudxhjfgsayugfugsegekuqf.hka.cutecloud.gq",
+                                          "users": [
+                                                        {
+                                                                        "id": "8A682098-3625-F872-3B8A-530FA2BA291E",
+                                                                        "alterId": 0,
+                                                                        "level": 0,
+                                                                        "security": "aes-128-gcm"
+                                                                      }
+                                                      ],
+                                          "port": 80
+                                        }
+                            ]
+                  }
+          },
+      {
+            "tag": "direct",
+            "protocol": "freedom",
+            "settings": {
+                    "domainStrategy": "UseIP",
+                    "redirect": "",
+                    "userLevel": 0
+                  }
+          },
+      {
+            "tag": "block",
+            "protocol": "blackhole",
+            "settings": {
+                    "response": {
+                              "type": "none"
+                            }
+                  }
           }
-        },
-        "tlsSettings": {
-          "allowInsecure": true
-        },
-        "security": "none",
-        "network": "ws"
-      },
-      "tag": "agentout",
-      "settings": {
-        "vnext": [
-          {
-            "address": "hka.988998.xyz",
-            "users": [
-              {
-                "id": "8A682098-3625-F872-3B8A-530FA2BA291E",
-                "alterId": 0,
-                "level": 0,
-                "security": "aes-128-gcm"
-              }
-            ],
-            "port": 8081
-          }
-        ]
-      }
-    },
-    {
-      "tag": "direct",
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "AsIs",
-        "redirect": "",
-        "userLevel": 0
-      }
-    },
-    {
-      "tag": "blockout",
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "none"
-        }
-      }
-    }
-  ],
-  "dns": {
-    "servers": [
-      ""
-    ]
-  },
+    ],
+  "dns": {},
   "routing": {
-    "strategy": "rules",
-    "settings": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "outboundTag": "direct",
-          "type": "field",
-          "ip": [
-            "geoip:cn",
-            "geoip:private"
-          ],
-          "domain": [
-            "geosite:cn",
-            "geosite:speedtest"
-          ]
-        }
-      ]
-    }
-  },
+      "settings": {
+            "domainStrategy": "AsIs",
+            "rules": []
+          }
+    },
   "transport": {}
 }
