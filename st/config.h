@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code Nerd Font Mono:pixelsize=24:antialias=true:autohint=true";
+static char *font = "Monaco:size=14";
+//static char *font = "Fira Code Nerd Font :pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -224,9 +225,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ControlMask,          XK_Page_Up,     kscrollup,      {.i = 1} },
+	{ ControlMask,          XK_p,           kscrollup,      {.i = 1} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ControlMask,          XK_Page_Down,   kscrolldown,    {.i = 1} },
+	{ ControlMask,          XK_o,           kscrolldown,    {.i = 1} },
     { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
