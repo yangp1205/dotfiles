@@ -114,7 +114,7 @@ Plug 'mhinz/vim-startify'
 
 "Plug 'airblade/vim-gitgutter'
 
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'tell-k/vim-autopep8'
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
@@ -147,7 +147,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'Yggdroot/indentLine'
@@ -158,18 +158,18 @@ Plug 'plasticboy/vim-markdown'
 "let g:mkdp_browser = "/usr/bin/chromium"
 "let g:mkdp_markdown_css=''
 
-Plug 'frazrepo/vim-rainbow'
-au FileType c,cpp,objc,objcpp,py call rainbow#load()
-let g:rainbow_active = 1
+"Plug 'frazrepo/vim-rainbow'
+"au FileType c,cpp,objc,objcpp,py call rainbow#load()
+"let g:rainbow_active = 1
 
 Plug 'SirVer/ultisnips'
 " 网友贡献的补全片段
 Plug 'honza/vim-snippets'
-"let g:UltiSnipsExpandTrigger       = "<c-tab>"     " 代码片段补全触发
-"let g:UltiSnipsListSnippets        = "<c-\>"       " 列出补全可选列表
-"let g:UltiSnipsJumpForwardTrigger  = "<c-j>"       " 下一条补全
-"let g:UltiSnipsJumpBackwardTrigger = "<c-k>"       " 上一条补全
-"let g:UltiSnipsEditSplit           = "horizontal"  " how the edit window is opened
+let g:UltiSnipsExpandTrigger       = "<c-tab>"     " 代码片段补全触发
+let g:UltiSnipsListSnippets        = "<c-\>"       " 列出补全可选列表
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"       " 下一条补全
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"       " 上一条补全
+let g:UltiSnipsEditSplit           = "horizontal"  " how the edit window is opened
 
 Plug 'preservim/nerdcommenter'
 
