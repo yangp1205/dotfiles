@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Monaco:size=14";
-//static char *font = "Fira Code Nerd Font :pixelsize=14:antialias=true:autohint=true";
+//static char *font = "Fira Code Nerd Font :pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
