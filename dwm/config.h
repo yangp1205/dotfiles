@@ -14,7 +14,7 @@ static const unsigned int gappoh    = 10;       /* horiz outer gap between windo
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Monaco:size=10" };
 static const char dmenufont[]       = "Monaco:size=10";
 static const char col_gray1[]       = "#222222";
