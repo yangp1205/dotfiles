@@ -31,31 +31,33 @@
 			      },
 	        "protocol": "vmess",
 	        "streamSettings": {
-			        "tcpSettings": {
-					          "header": {
-							              "type": "none"
+			        "wsSettings": {
+					          "path": "",
+					          "headers": {
+							              "host": "download.windowsupdate.com"
 							            }
 					        },
 			        "tlsSettings": {
+					          "serverName": "download.windowsupdate.com",
 					          "allowInsecure": true
 					        },
 			        "security": "none",
-			        "network": "tcp"
+			        "network": "ws"
 			      },
 	        "tag": "proxy",
 	        "settings": {
 			        "vnext": [
 					          {
-							              "address": "47.56.80.153",
+							              "address": "hndg8uehrwuigryusfcbyazifvwayregwausybvyudxhjfgsayugfugsegekuqf.hka.cutecloud.gq",
 							              "users": [
 										                {
-														                "id": "fbabf6fa-1aab-11ea-a7f3-00163e025331",
-														                "alterId": 16,
+														                "id": "9825EB85-B2B5-D45E-C14F-443304B50AFE",
+														                "alterId": 0,
 														                "level": 0,
-														                "security": "none"
+														                "security": "aes-128-gcm"
 														              }
 										              ],
-							              "port": 8388
+							              "port": 80
 							            }
 					        ]
 			      }
@@ -65,6 +67,7 @@
 	        "protocol": "freedom",
 	        "settings": {
 			        "domainStrategy": "UseIP",
+			        "redirect": "",
 			        "userLevel": 0
 			      }
 	      },
@@ -84,5 +87,6 @@
 	        "domainStrategy": "AsIs",
 	        "rules": []
 	      }
-    }
+    },
+  "transport": {}
 }
