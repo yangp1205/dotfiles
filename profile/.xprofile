@@ -1,5 +1,8 @@
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-vmware-user &
-ibus-daemon &
+LANG=zh_CN.UTF-8
+LC_COLLATE=C
+LC_TIME=zh_CN.UTF-8
+INPUT_METHOD  DEFAULT=fcitx5
+GTK_IM_MODULE DEFAULT=fcitx5
+QT_IM_MODULE  DEFAULT=fcitx5
+XMODIFIERS    DEFAULT=@im=fcitx5
+export _JAVA_AWT_WM_NONREPARENTING=1
