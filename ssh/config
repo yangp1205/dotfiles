@@ -1,0 +1,15 @@
+Host tencent
+    Hostname 129.211.7.88
+    User ubuntu
+
+Host aliyun
+    Hostname 47.56.211.7
+    User john
+
+Host 124
+    Hostname 138.128.209.124
+    User www
+
+Host 254
+    Hostname 144.34.156.254
+    User www
