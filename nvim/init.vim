@@ -2,6 +2,7 @@
 syntax on
 set encoding=utf-8
 set nu
+set rnu
 set ruler
 set backspace=2
 " set nocompatible
@@ -34,8 +35,10 @@ set showmatch
 
 " 搜索自动匹配
 set incsearch
-let g:python3_host_prog = '/usr/local/bin/python3'
 
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog  = '/usr/bin/python2'
+let g:ruby_host_prog = '/usr/bin/ruby'
 filetype plugin on
 
 "F5运行python3
@@ -99,24 +102,11 @@ endfunc
     autocmd BufNewFile * normal G
 
 
-"Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_min_num_of_chars_for_completion = 2  "开始补全的字符数"
-"let g:ycm_python_binary_path = 'python'  "jedi模块所在python解释器路径"
-"let g:ycm_seed_identifiers_with_syntax = 1  "开启使用语言的一些关键字查询"
-"let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口"
-
-
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-
-"Plug 'Valloric/YouCompleteMe'
-"let g:ycm_min_num_of_chars_for_completion = 2  "开始补全的字符数"
-"let g:ycm_python_binary_path = "/usr/local/bin/python3" "jedi模块所在python解释器路径"
-"let g:ycm_seed_identifiers_with_syntax = 1  "开启使用语言的一些关键字查询"
-"let g:ycm_autoclose_preview_window_after_completion=1 "补全后自动关闭预览窗口"
 
 Plug 'mhinz/vim-startify'
 
@@ -124,63 +114,38 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-Plug 'tell-k/vim-autopep8'
-autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
-
-Plug 'vim-airline/vim-airline'
-nnoremap [b :bp<CR>
-nnoremap ]b :bn<CR>
-
-
-Plug 'vim-airline/vim-airline-themes'
-let g:airline#extensions#tabline#enabled = 1
-" <leader>1~9 切到 buffer1~9
-map <leader>1 :b 1<CR>
-map <leader>2 :b 2<CR>
-map <leader>3 :b 3<CR>
-map <leader>4 :b 4<CR>
-map <leader>5 :b 5<CR>
-map <leader>6 :b 6<CR>
-map <leader>7 :b 7<CR>
-map <leader>8 :b 8<CR>
-map <leader>9 :b 9<CR>
-
 Plug 'Raimondi/delimitMate'
 
-"Plug 'maralla/completor.vim'
-"let g:completor_python_binary = '/usr/bin/python3'
 
-Plug 'vim-syntastic/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = ['coc-vimlsp', 'coc-json', 'coc-python']
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
-Plug 'scrooloose/nerdtree'
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'jistr/vim-nerdtree-tabs'
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-Plug 'Yggdroot/indentLine'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_conceal = 0
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-Plug 'frazrepo/vim-rainbow'
-au FileType c,cpp,objc,objcpp,py call rainbow#load()
-let g:rainbow_active = 1
-
-Plug 'SirVer/ultisnips'
-" 网友贡献的补全片段
-Plug 'honza/vim-snippets'
-"let g:UltiSnipsExpandTrigger       = "<c-tab>"     " 代码片段补全触发
-"let g:UltiSnipsListSnippets        = "<c-\>"       " 列出补全可选列表
-"let g:UltiSnipsJumpForwardTrigger  = "<c-j>"       " 下一条补全
-"let g:UltiSnipsJumpBackwardTrigger = "<c-k>"       " 上一条补全
-"let g:UltiSnipsEditSplit           = "horizontal"  " how the edit window is opened
-
-Plug 'preservim/nerdcommenter'
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-let g:mkdp_browser = "/Applications/Google Chrome.app"
-let g:mkdp_markdown_css=''
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " Initialize plugin system
 call plug#end()
