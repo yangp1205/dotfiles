@@ -113,11 +113,9 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'Raimondi/delimitMate'
 
-"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-"let g:mkdp_browser = "/usr/bin/chromium"
-"let g:mkdp_markdown_css=''
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-vimlsp', 'coc-json', 'coc-python']
+let g:coc_disable_startup_warning = 1
 if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
   set signcolumn=number
