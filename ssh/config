@@ -1,6 +1,6 @@
-Host tencent
-    Hostname 129.211.7.88
-    User ubuntu
+Host kilimanjaro
+    Hostname 119.29.54.251
+    User snow 
 
 Host aliyun
     Hostname 47.56.211.7
@@ -9,7 +9,19 @@ Host aliyun
 Host 124
     Hostname 138.128.209.124
     User www
+    Port 28199
 
 Host 254
     Hostname 144.34.156.254
     User www
+    Port 27932
+
+ Host 90
+    hostname 23.105.212.90
+    User www
+    Port 29052
+
+Host ru
+    Hostname 188.127.230.100
+    User snow
+    Port 22
