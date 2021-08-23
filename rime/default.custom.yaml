@@ -1,6 +1,9 @@
-patch:
-    menu:
-        page_size: 7
-    schema_list:
-        - schema: luna_pinyin_simp
-        - schema: luna_pinyin
+# default.custom.yaml
+# 用户  输入法配置
+patch: 
+  schema_list:  # 输入方案列表
+    - schema: luna_pinyin_simp  # 移除其它输入方案, 只保留拼音输入方案
+  menu:
+    page_size: 7  # 候选词为5个
+  "ascii_composer/switch_key/Shift_L": commit_code  # 左shift上屏,且切换英文
+  "ascii_composer/switch_key/Shift_R": commit_code  # 右shift上屏,且切换英文

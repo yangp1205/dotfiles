@@ -122,11 +122,11 @@ export MANPATH="/usr/local/man:$MANPATH"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -141,9 +141,8 @@ alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias svim="sudo vim"
 alias cman="man -M /usr/share/man/zh_CN"
-alias ins="sudo pacman -S "
-alias insu="sudo pacman -Syuu"
-alias hfdown="sudo vmhgfs-fuse -o allow_other -o auto_unmount .host:下载 /mnt/hgfs"
-alias i3config="vim ~/.config/i3/config"
+alias ins="sudo apt install "
+alias insu="sudo apt update && sudo apt upgrade"
+alias insr="sudo apt remove "
 # export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;
 
