@@ -75,6 +75,7 @@ plugins=(git
         virtualenvwrapper
         autojump
         #vi-mode
+        pip
         )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,6 +91,12 @@ source ~/.zplug/init.zsh
 #GITSTATUS_LOG_LEVEL=DEBUG
 #POWERLEVEL9K_DISABLE_GITSTATUS=true
 #GITSTATUS_LOG_LEVEL=DEBUG
+
+# pure themes
+#
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+
 
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
